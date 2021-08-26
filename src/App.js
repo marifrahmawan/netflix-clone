@@ -1,9 +1,9 @@
+import Home from './home/Home';
+
+import './app.scss';
+
 function App() {
-  return (
-    <div className="App">
-      <h1>Hi</h1>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
