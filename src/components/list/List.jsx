@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import {
   ArrowBackIosOutlined,
@@ -6,28 +6,40 @@ import {
 } from '@material-ui/icons';
 
 import ListItem from '../listItem/ListItem';
+import useWindowDimensions from './useWindowDimension';
 
 import './list.scss';
 
+//* List Component
 const List = () => {
-  const [isMoved, setIsMoved] = useState(false);
-  const [slideNumber, setSlideNumber] = useState(0);
-
+  const [slideNumber, setSlideNumber] = useState(1);
+  const [showSlider, setShowSlider] = useState(true);
+  const { width } = useWindowDimensions();
   const listRef = useRef();
 
+  useEffect(() => {
+    const sliderBtnShowing = setTimeout(() => {
+      setShowSlider(false);
+    }, 250);
+
+    return () => {
+      setShowSlider(true);
+      clearTimeout(sliderBtnShowing);
+    };
+  }, [slideNumber]);
+
   const handleClick = (direction) => {
-    setIsMoved(true);
+    const howManyBox = width / 230;
     let distance = listRef.current.getBoundingClientRect().x - 50;
 
-    console.log(slideNumber);
-
-    if (direction === 'left' && slideNumber > 0) {
-      setSlideNumber(slideNumber - 1);
-      listRef.current.style.transform = `translateX(${300 + distance}px)`;
-    }
-    if (direction === 'right' && slideNumber < 4) {
+    if (direction === 'right' && slideNumber <= 15 - howManyBox) {
       setSlideNumber(slideNumber + 1);
-      listRef.current.style.transform = `translateX(${-300 + distance}px)`;
+      listRef.current.style.transform = `translateX(${-230 + distance}px)`;
+    }
+
+    if (direction === 'left' && slideNumber > 1) {
+      setSlideNumber(slideNumber - 1);
+      listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
   };
 
@@ -38,9 +50,12 @@ const List = () => {
         <ArrowBackIosOutlined
           className="sliderArrow left"
           onClick={handleClick.bind(null, 'left')}
-          style={{ display: !isMoved && 'none' }}
+          style={{
+            display: slideNumber === 1 || showSlider === true ? 'none' : '',
+          }}
         />
         <div className="container" ref={listRef}>
+          <ListItem />
           <ListItem />
           <ListItem />
           <ListItem />
@@ -58,6 +73,9 @@ const List = () => {
         <ArrowForwardIosOutlined
           className="sliderArrow right"
           onClick={handleClick.bind(null, 'right')}
+          style={{
+            display: showSlider === true ? 'none' : '',
+          }}
         />
       </div>
     </div>
