@@ -1,3 +1,12 @@
 :root {
   --main-color: #0b0b0b;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(136, 136, 136);
+  border-radius: 10px;
+}

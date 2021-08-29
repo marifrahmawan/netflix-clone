@@ -11,32 +11,27 @@
 
   .wrapper {
     position: relative;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    height: max-content;
 
-    .sliderArrow {
-      height: 100%;
-      width: 50px;
-      background-color: rgb(22, 22, 22, 0.5);
-      color: white;
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      cursor: pointer;
-
-      &.left {
-        left: 0;
-      }
-
-      &.right {
-        right: 0;
-      }
+    &::-webkit-scrollbar {
+      height: 6px;
     }
 
+    &::-webkit-scrollbar-track {
+      margin: 0 15px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(168, 161, 161, 0.384);
+      border-radius: 20px;
+    }
     .container {
-      margin: 15px 50px;
+      margin: 15px 15px;
       display: flex;
       width: max-content;
-      transform: translateX(0px);
-      transition: all 0.25s ease;
     }
   }
 }
