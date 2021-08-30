@@ -1,24 +1,105 @@
 .listItem {
-  width: 350px;
-  height: 180px;
+  width: 220px;
+  height: 380px;
   background-color: var(--main-color);
   margin-right: 5px;
   overflow: hidden;
   color: white;
+  margin-right: 10px;
 
   &:hover {
-    width: 350px;
-    height: 180px;
+    width: 220px;
+    height: 380px;
     transition: width 1s, height 1s;
 
-    -webkit-box-shadow: 0px 7px 17px -3px rgba(255, 255, 255, 0.36);
-    box-shadow: 0px 7px 17px -3px rgba(255, 255, 255, 0.36);
+    .itemInfo {
+      width: inherit;
+      position: absolute;
+      bottom: 15px;
+      transition: all 1s ease;
+      background-color: rgba(0, 0, 0, 0.801);
 
-    img {
-      width: 350px;
-      height: 110px;
-      object-fit: cover;
-      transition: width 1s, height 1s;
+      .itemInfoTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+
+        span {
+          font-size: 12px;
+          cursor: pointer;
+          border: 2px solid white;
+          padding: 2px 2px;
+          border-radius: 5px;
+          margin-right: 15px;
+        }
+
+        .icons {
+          .iconPlay {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0px 2px 2px 5px;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 3px;
+            transition: all 1s ease;
+          }
+          .iconAdd {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 2px 2px 2px 5px;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 3px;
+            transition: all 1s ease;
+          }
+          .iconLike {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 2px 2px 2px 5px;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 3px;
+            transition: all 1s ease;
+          }
+          .iconDislike {
+            cursor: pointer;
+            font-size: 18px;
+            margin: 2px 2px 2px 5px;
+            border: 2px solid white;
+            border-radius: 50%;
+            padding: 3px;
+            transition: all 1s ease;
+          }
+        }
+      }
+
+      .itemInfoBottom {
+        color: gray;
+        font-weight: 300;
+        margin-left: 10px;
+        margin-top: 10px;
+        transition: all 1s ease;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          margin-right: 20px;
+          font-size: 14px;
+        }
+
+        .ageLimit {
+          border: 1px solid;
+          padding: 0px 2px;
+          border-radius: 5px;
+        }
+      }
+
+      .genre {
+        margin: 5px 0px 5px 10px;
+        font-weight: bold;
+        transition: all 1s ease;
+      }
     }
   }
 

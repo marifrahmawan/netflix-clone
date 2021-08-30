@@ -25,7 +25,7 @@ export const Featured = (props) => {
             <option value="romance">Romance</option>
             <option value="sci-fi">Sci-fi</option>
             <option value="thriller">Thriller</option>
-            <option value="western">Wester</option>
+            <option value="western">Western</option>
           </select>
         </div>
       )}
