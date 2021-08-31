@@ -1,9 +1,14 @@
-import Home from './home/Home';
+import Home from '../src/pages/home/Home';
 
 import './app.scss';
+import MoreInfoProvider from './context/MoreInfoProvider';
 
 function App() {
-  return <Home />;
+  return (
+    <MoreInfoProvider>
+      <Home />
+    </MoreInfoProvider>
+  );
 }
 
 export default App;

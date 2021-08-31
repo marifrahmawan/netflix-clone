@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import {
   Add,
   PlayArrow,
@@ -6,15 +6,14 @@ import {
   ThumbUpAltOutlined,
 } from '@material-ui/icons';
 
+import MoreInfoContext from '../../context/MoreInfoContext';
 import './list-item.scss';
 
 const ListItem = () => {
-  const [movieInfo, setMovieInfo] = useState(false);
-
-  const movieInfoHandler = () => {
-    setMovieInfo((prevState) => !prevState);
+  const moreInfoCtx = useContext(MoreInfoContext);
+  const data = {
+    title: 'Spider Man - Far From Home',
   };
-
   return (
     <div className="listItem">
       <img
@@ -29,7 +28,9 @@ const ListItem = () => {
             <ThumbUpAltOutlined className="iconLike" />
             <ThumbDownAltOutlined className="iconDislike" />
           </div>
-          <span onClick={movieInfoHandler}>More</span>
+          <span onClick={moreInfoCtx.openInfoHandler.bind(null, data)}>
+            More
+          </span>
         </div>
         <div className="itemInfoBottom">
           <span>1 hr 40 mins</span>

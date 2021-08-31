@@ -1,13 +1,18 @@
-import { Close } from '@material-ui/icons';
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { Close } from '@material-ui/icons';
+import MoreInfoContext from '../../context/MoreInfoContext';
 import './more-info.scss';
 
 function MoreInfo() {
+  const moreInfoCtx = useContext(MoreInfoContext);
+
+  const { title } = moreInfoCtx.movieData;
+
   return (
     <div className="moreInformation">
       <div className="moreInformationLeft">
-        <Close className="closeButton" />
+        <Close className="closeButton" onClick={moreInfoCtx.closeInfoHandler} />
 
         <img
           src="https://images6.alphacoders.com/102/thumb-1920-1020775.jpg"
@@ -24,7 +29,7 @@ function MoreInfo() {
           allowFullScreen
         ></iframe>
         <div className="informationDesc">
-          <h1>Spider Man Far From Home</h1>
+          <h1>Spider Man - Far From Home</h1>
           <div className="movieInfo">
             <span>1 hr 40 mins</span>
             <span className="ageLimit">+16</span>
