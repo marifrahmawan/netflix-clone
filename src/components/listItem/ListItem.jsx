@@ -14,6 +14,7 @@ const ListItem = () => {
   const data = {
     title: 'Spider Man - Far From Home',
   };
+
   return (
     <div className="listItem">
       <img
@@ -29,7 +30,7 @@ const ListItem = () => {
             <ThumbDownAltOutlined className="iconDislike" />
           </div>
           <span onClick={moreInfoCtx.openInfoHandler.bind(null, data)}>
-            More
+            Info
           </span>
         </div>
         <div className="itemInfoBottom">

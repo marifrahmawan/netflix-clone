@@ -6,17 +6,18 @@
   overflow: hidden;
   color: white;
   margin-right: 10px;
+  position: relative;
 
   &:hover {
     width: 220px;
     height: 380px;
-    transition: width 1s, height 1s;
+    transition: all 450ms ease;
 
     .itemInfo {
       width: inherit;
       position: absolute;
       bottom: 15px;
-      transition: all 1s ease;
+      transition: all 450ms ease;
       background-color: rgba(0, 0, 0, 0.801);
 
       .itemInfoTop {
@@ -42,7 +43,7 @@
             border: 2px solid white;
             border-radius: 50%;
             padding: 3px;
-            transition: all 1s ease;
+            transition: all 450ms ease;
           }
           .iconAdd {
             cursor: pointer;
@@ -51,7 +52,7 @@
             border: 2px solid white;
             border-radius: 50%;
             padding: 3px;
-            transition: all 1s ease;
+            transition: all 450ms ease;
           }
           .iconLike {
             cursor: pointer;
@@ -60,7 +61,7 @@
             border: 2px solid white;
             border-radius: 50%;
             padding: 3px;
-            transition: all 1s ease;
+            transition: all 450ms ease;
           }
           .iconDislike {
             cursor: pointer;
@@ -69,7 +70,7 @@
             border: 2px solid white;
             border-radius: 50%;
             padding: 3px;
-            transition: all 1s ease;
+            transition: all 450ms ease;
           }
         }
       }
@@ -79,7 +80,7 @@
         font-weight: 300;
         margin-left: 10px;
         margin-top: 10px;
-        transition: all 1s ease;
+        transition: all 450ms ease;
         display: flex;
         justify-content: space-between;
 
@@ -98,7 +99,7 @@
       .genre {
         margin: 5px 0px 5px 10px;
         font-weight: bold;
-        transition: all 1s ease;
+        transition: all 450ms ease;
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ListItem from '../listItem/ListItem';
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 import './list.scss';
 
@@ -10,22 +11,24 @@ const List = () => {
     <div className="list">
       <span className="listTitle">Continue to watch</span>
       <div className="wrapper">
-        <div className="container">
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-        </div>
+        <ScrollContainer className="scroll-container">
+          <div className="container">
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+            <ListItem />
+          </div>
+        </ScrollContainer>
       </div>
     </div>
   );

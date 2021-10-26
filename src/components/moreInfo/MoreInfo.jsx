@@ -7,8 +7,6 @@ import './more-info.scss';
 function MoreInfo() {
   const moreInfoCtx = useContext(MoreInfoContext);
 
-  const { title } = moreInfoCtx.movieData;
-
   return (
     <div className="moreInformation">
       <div className="moreInformationLeft">
@@ -16,6 +14,7 @@ function MoreInfo() {
 
         <img
           src="https://images6.alphacoders.com/102/thumb-1920-1020775.jpg"
+          loading="lazy"
           alt="Spiderman far from Home"
         />
         <div className="backdrop"></div>
